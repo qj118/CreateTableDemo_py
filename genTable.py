@@ -1,6 +1,7 @@
 from docx import Document
 from docx.shared import Inches
 from docx.enum.style import WD_STYLE_TYPE
+from docx.enum.table import WD_TABLE_ALIGNMENT
 import datetime
 
 year = 2018
@@ -31,6 +32,7 @@ document = Document()
 
 
 table = document.add_table(rows = int(weeks), cols = 5, style = "Light Grid Accent 1")
+table.alignment = WD_TABLE_ALIGNMENT.CENTER
 
 heading_cells = table.rows[0].cells
 heading_cells[0].text = '2018'
